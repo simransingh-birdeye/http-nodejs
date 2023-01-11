@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import cors from 'cors';
+import https from 'https';
+
 const app = express();
-const cors = require('cors');
 const route = express.Router();
-const https = require('https');
 
 app.use(cors());
 const corsOptions = {
@@ -28,6 +29,6 @@ route.get("/getPincode", function (req, res) {
 
 app.use("/api", route);
 
-apapp.listen(process.env.PORT, function () {
+app.listen(process.env.PORT, function () {
     console.log("server started");
 })
